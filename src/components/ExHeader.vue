@@ -11,8 +11,8 @@
 				/>
 			</router-link>
 			<nav>
-				<ul class="flex items-center justify-center">
-					<li class="mr-3 text-white font-bold text-2xl">
+				<ul class="flex items-center justify-center ">
+					<li class="mr-3 text-white font-bold text-2xl text-decoration-none">
 						<router-link to="/">Video</router-link>
 					</li>
 					<li class="mr-3 text-white font-bold text-2xl">
