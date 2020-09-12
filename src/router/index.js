@@ -1,54 +1,32 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
 import Error from '@/views/Error';
 
 Vue.use(VueRouter);
 
 const routes = [{
         path: '/',
-        name: 'Home',
-        component: Home,
-    },
-    {
-        path: '/video',
         name: 'Video',
         component: () =>
-            import ( /* webpackChunkName: "video" */ '../views/Video/Video.vue'),
-        children: [{
-                path: '',
-                name: 'video-list',
-                component: () =>
-                    import (
-                        /* webpackChunkName: "video-list" */
-                        '../views/Video/VideoList.vue'
-                    ),
-            },
-            {
-                path: '/video/add',
-                name: 'video-add',
-                component: () =>
-                    import (
-                        /* webpackChunkName: "video-add" */
-                        '../views/Video/VideoAdd.vue'
-                    ),
-            },
-            {
-                path: '/video/:id',
-                name: 'video-detail',
-                component: () =>
-                    import (
-                        /* webpackChunkName: "video-add" */
-                        '../views/Video/VideoDetail.vue'
-                    ),
-            },
-        ],
+            import ('../views/Video/Video.vue'),
+    },
+    {
+        path: '/video/:id',
+        name: 'VideoEditar',
+        component: () =>
+            import ('../views/Video/VideoEditar.vue'),
+    },
+    {
+        path: '/videoAgregar',
+        name: 'VideoAgregar',
+        component: () =>
+            import ('../views/Video/VideoAgregar.vue'),
     },
     {
         path: '/mapa',
         name: 'Mapa',
         component: () =>
-            import ( /* webpackChunkName: "video" */ '../views/Mapa.vue'),
+            import ('../views/Mapa.vue'),
     },
     {
         path: '*',

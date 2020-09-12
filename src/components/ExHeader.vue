@@ -1,45 +1,51 @@
 <template>
-	<header>
-		<img
-			src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTVJHeXYSv8g_cUQlB1cwa255f4VOgZ7Zi85w&usqp=CAU"
-			alt=""
-		/>
-		<nav>
-			<ul>
-				<li><router-link to="/">Home</router-link></li>
-				<li><router-link to="/video">Video</router-link></li>
-				<li><router-link to="/Mapa">Mapa</router-link></li>
-			</ul>
-		</nav>
+	<header class=" shadow w-screen fixed-top">
+		<div
+			class=" flex items-center justify-between flex-wrap bg-gray-600 p-6 h-40"
+		>
+			<router-link to="/" class="contenedor-imagen">
+				<img
+					class="logo"
+					src="https://i.ibb.co/hLRCNk3/veratube-probando.png"
+					alt=""
+				/>
+			</router-link>
+			<nav>
+				<ul class="flex items-center justify-center">
+					<li class="mr-3 text-white font-bold text-2xl">
+						<router-link to="/">Video</router-link>
+					</li>
+					<li class="mr-3 text-white font-bold text-2xl">
+						<router-link to="/Mapa">Mapa</router-link>
+					</li>
+					<li class="mr-3 text-white font-bold text-2xl">
+						<router-link to="/VideoAgregar">Agregar Video</router-link>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</header>
 </template>
 
 <script>
-export default {};
+export default {
+	name: 'ExHeader',
+
+	props: {},
+
+	methods: {
+		modalActive() {
+			this.$emit('modalOn');
+		},
+	},
+};
 </script>
 
 <style>
-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	background-color: red;
-	padding: 5px 20px;
+.contenedor-imagen {
+	width: 8%;
 }
-ul {
-	display: flex;
-	justify-content: space-between;
-	list-style: none;
-	margin-right: 20px;
-}
-ul li {
-	margin-right: 20px;
-}
-
-li a {
-	color: white;
-	text-decoration: none;
-	font-size: 20px;
-	font-weight: bold;
+.logo {
+	width: 100%;
 }
 </style>

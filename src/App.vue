@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<ex-header />
-		<router-view />
+		<router-view class="mt-48" />
 	</main>
 </template>
 
@@ -11,6 +11,16 @@ import ExHeader from '@/components/ExHeader';
 export default {
 	name: 'app',
 	components: { ExHeader },
+	data() {
+		return {
+			modalState: false,
+		};
+	},
+	methods: {
+		modalOn() {
+			this.modalState = !this.modalState;
+		},
+	},
 };
 </script>
 
